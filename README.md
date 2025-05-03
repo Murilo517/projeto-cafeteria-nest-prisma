@@ -70,6 +70,7 @@ npx prisma migrate dev
 npm run start:dev
 
 A API estará disponível em: http://localhost:3000
+
 📋 Rotas da API
 Criar Pedido
 
