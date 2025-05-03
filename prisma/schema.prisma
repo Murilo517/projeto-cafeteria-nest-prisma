@@ -1,0 +1,52 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum OrderStatus {
+  PREPARING
+  READY
+  DELIVERED
+}
+
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  createdAt DateTime @default(now())
+
+  orders    Order[]  // Relação: Um usuário tem vários pedidos
+}
+
+model Product {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String?
+  price       Float
+  createdAt   DateTime @default(now())
+
+  orders      Order[]  // Relação: Produto pode estar em vários pedidos
+}
+
+model Order {
+  id          Int      @id @default(autoincrement())
+  quantity    Int
+  notes       String?
+  client      String
+  status      OrderStatus @default(PREPARING)
+  createdAt   DateTime @default(now())
+
+  // Relacionamento com User
+  userId      Int
+  user        User      @relation(fields: [userId], references: [id])
+
+  // Relacionamento com Product
+  productId   Int
+  product     Product   @relation(fields: [productId], references: [id])
+}
+
