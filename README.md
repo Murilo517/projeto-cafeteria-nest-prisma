@@ -41,10 +41,10 @@ projeto-cafeteria/
 
 🛠️ Como rodar o projeto localmente
 
-1) Clone o repositório
+1) Clone o repositório: 
  git clone https://github.com/Murilo517/projeto-cafeteria.git
 
- cd projeto-cafeteria
+Navegue para a pasta: cd projeto-cafeteria
 
 3) Instale as dependências
  npm install
