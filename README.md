@@ -42,13 +42,14 @@ projeto-cafeteria/
 🛠️ Como rodar o projeto localmente
 
 1) Clone o repositório
-$ git clone https://github.com/Murilo517/projeto-cafeteria.git
-$ cd projeto-cafeteria
+ git clone https://github.com/Murilo517/projeto-cafeteria.git
 
-2) Instale as dependências
-$ npm install
+ cd projeto-cafeteria
 
-3) Configure o banco de dados
+3) Instale as dependências
+ npm install
+
+4) Configure o banco de dados
 
 - Copie o arquivo .env.example e renomeie para .env.
 - Ajuste a variável DATABASE_URL com as credenciais do seu banco PostgreSQL.
@@ -57,10 +58,10 @@ Exemplo para PostgreSQL:
 DATABASE_URL="postgresql://usuario:senha@localhost:5432/cafeteria"
 
 4) Rode as migrações
-$ npx prisma migrate dev
+ npx prisma migrate dev
 
 5) Inicie a API
-$ npm run start:dev
+ npm run start:dev
 
 A API estará disponível em: http://localhost:3000
 
@@ -68,21 +69,27 @@ A API estará disponível em: http://localhost:3000
 📋 Rotas da API
 
 🔹 Criar Usuário
+
 POST /users
+
 {
   "name": "João da Silva",
   "email": "joao@gmail.com"
 }
 
 🔹 Criar Produto
+
 POST /products
+
 {
   "name": "Café Expresso",
   "price": 5.5
 }
 
 🔹 Criar Pedido
+
 POST /orders
+
 {
   "userId": 1,
   "productId": 2,
@@ -91,22 +98,25 @@ POST /orders
 }
 
 🔹 Listar Todos os Pedidos
+
 GET /orders
 
 🔹 Atualizar Status de um Pedido
+
 PATCH /orders/:id/status
+
 {
   "status": "READY"
 }
 
 🔹 Buscar Pedidos por Status
+
 GET /orders/filter/status?status=READY
 
 Valores possíveis para status:
 - PREPARING
 - READY
 - DELIVERED
-
 
 
 
