@@ -77,6 +77,10 @@ POST /users
   "email": "joao@gmail.com"
 }
 
+🔹 Listar Usuários
+
+GET /users
+
 🔹 Criar Produto
 
 POST /products
@@ -85,6 +89,10 @@ POST /products
   "name": "Café Expresso",
   "price": 5.5
 }
+
+🔹 Listar Produtos
+
+GET /products
 
 🔹 Criar Pedido
 
