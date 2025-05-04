@@ -100,7 +100,7 @@ POST /orders
 
 {
   "userId": 1,
-  "productId": 2,
+  "productId": 1,
   "quantity": 2,
   "notes": "Sem açúcar"
 }
